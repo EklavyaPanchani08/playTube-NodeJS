@@ -7,7 +7,7 @@
 // };
 
 const asyncHeander = (requestHandler) => {
-  (req, res, next) => {
+  return (req, res, next) => {
     Promise.resolve(requestHandler(req, res)).catch((error) => next(error));
   };
 };
